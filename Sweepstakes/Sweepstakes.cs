@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-  class Sweepstakes
+  public class Sweepstakes
   {
     // Member variables
     private string name;
     int registrationNum;
-    private Dictionary<int, Contestant> contestants; 
+    public Dictionary<int, Contestant> contestants; 
 
     // Constructor
     public Sweepstakes(string name)
@@ -39,17 +39,17 @@ namespace Sweepstakes
 
       // implement Random object
       Random rng = new Random();
-
+      
       // produce a random number less than or equal to the number of values in the contestants dictionary
-      winningRegistrationNumber = rng.Next(contestants.Count + 1);
+      winningRegistrationNumber = rng.Next(contestants.Count);
       winner = $"{contestants[winningRegistrationNumber].RegistrationNumber}: {contestants[winningRegistrationNumber].FirstName} {contestants[winningRegistrationNumber].LastName}";
-
+      Console.WriteLine($"\nRandom Number: {winningRegistrationNumber}");
       return winner;
     }
 
     public void PrintContesantInfo(Contestant contestant)
     {
-      
+      UserInterface.DisplayContestantInformation(contestant);
     }
   }
 }

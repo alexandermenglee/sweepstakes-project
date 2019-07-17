@@ -13,11 +13,15 @@ namespace Sweepstakes
 
     }
     
+    public static void StartingMessage()
+    {
+      Console.WriteLine("\nPlease add user information:");
+    }
     public static string SetFirstName()
     {
       string firstName;
 
-      Console.WriteLine("First Name: ");
+      Console.WriteLine("\nFirst Name: ");
       firstName = Console.ReadLine();
       firstName.ToLower().Trim();
 
@@ -28,7 +32,7 @@ namespace Sweepstakes
     {
       string lastName;
 
-      Console.WriteLine("Last Name: ");
+      Console.WriteLine("\nLast Name: ");
       lastName = Console.ReadLine();
       lastName.ToLower().Trim();
 
@@ -43,13 +47,13 @@ namespace Sweepstakes
       email = Console.ReadLine();
       email.ToLower().Trim();
 
-      if (email.Contains("@") && email.Contains("."))
+      if (!email.Contains("@") || !email.Contains("."))
       {
-        return email;
+        Console.WriteLine("\nPlease enter in a valid email address");
+        SetEmail();
       }
-      Console.WriteLine("\nPlease enter in a valid email address");
-      SetEmail();
 
+      return email;
     }
 
     public static int SetRegistrationNumber()
@@ -69,6 +73,11 @@ namespace Sweepstakes
         Console.WriteLine("\nEnter in numbers only");
         return SetRegistrationNumber();
       }
+    }
+
+    public static void DisplayContestantInformation(Contestant contestant)
+    {
+      Console.WriteLine($"\nRegistration ID: {contestant.RegistrationNumber} Contestant Name: {contestant.FirstName} {contestant.LastName}");
     }
   }
 }
