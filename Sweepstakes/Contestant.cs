@@ -17,15 +17,18 @@ namespace Sweepstakes
     public int RegistrationNumber
     {
       get => registrationNumber;
+      set => registrationNumber = value;
     }
 
     public string FirstName
     {
+      get => firstName;
       set => firstName = value;
     }
 
     public string LastName
     {
+      get => lastName;
       set => lastName = value;
     }
 

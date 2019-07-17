@@ -43,13 +43,13 @@ namespace Sweepstakes
       email = Console.ReadLine();
       email.ToLower().Trim();
 
-      if (!email.Contains("@"))
+      if (email.Contains("@") && email.Contains("."))
       {
-        Console.WriteLine("\nPlease enter in a valid email address");
-        SetEmail();
+        return email;
       }
+      Console.WriteLine("\nPlease enter in a valid email address");
+      SetEmail();
 
-      return email;
     }
 
     public static int SetRegistrationNumber()
