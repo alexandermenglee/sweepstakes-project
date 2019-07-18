@@ -99,6 +99,17 @@ namespace Sweepstakes
       return ChooseManagementSystem();
     }
 
+    public static void ShowResults(Contestant contestant, Sweepstakes sweepstakes)
+    {
+      if (contestant.RegistrationNumber == sweepstakes.WinningContestant.RegistrationNumber)
+      {
+        Console.WriteLine($"{contestant.FirstName} {contestant.LastName} you are the winner!");
+      }
+      else
+      {
+        Console.WriteLine($"{contestant.FirstName} {contestant.LastName} you take the L!");
+      }
+    }
    
 
   }

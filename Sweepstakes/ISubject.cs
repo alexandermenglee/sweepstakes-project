@@ -10,7 +10,6 @@ namespace Sweepstakes
   {
     void Register(IObserver observer);
     void Unregister(IObserver observer);
-
     void Notify();
   }
 }

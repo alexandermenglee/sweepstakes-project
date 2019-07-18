@@ -12,7 +12,7 @@ namespace Sweepstakes
     private string firstName;
     private string lastName;
     private string email;
-    private int registrationNumber;
+    private int registrationNumber; 
 
     public int RegistrationNumber
     {
@@ -46,16 +46,9 @@ namespace Sweepstakes
     }
 
     // Implementing IObserver
-     public void Update(Sweepstakes sweepstake)
+     public void Update(Sweepstakes sweepstakes)
     {
-      if(registrationNumber == sweepstake.WinningContestant.RegistrationNumber)
-      {
-        Console.WriteLine($"{firstName} {lastName} you are the winner!");
-      }
-      else
-      {
-        Console.WriteLine($"{firstName} {lastName} you take the L!");
-      }
+      UserInterface.ShowResults(this, sweepstakes);
     }
 
   }

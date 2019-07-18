@@ -10,7 +10,7 @@ namespace Sweepstakes
   {
     // Member variables
     private string name;
-    int registrationNum;
+    private int registrationNum;
     public Dictionary<int, Contestant> contestants;
     // Member variable to hold winner
     private Contestant winningContestant;
@@ -41,7 +41,7 @@ namespace Sweepstakes
       contestant.RegistrationNumber = registrationNum;
 
       // Add contestant to dictionary
-      contestants.Add(contestant.RegistrationNumber, contestant);
+      contestants.Add(registrationNum, contestant);
 
       registrationNum++;
     }
@@ -56,8 +56,9 @@ namespace Sweepstakes
       
       // produce a random number less than or equal to the number of values in the contestants dictionary
       winningRegistrationNumber = rng.Next(contestants.Count);
+      
       winner = $"{contestants[winningRegistrationNumber].RegistrationNumber}: {contestants[winningRegistrationNumber].FirstName} {contestants[winningRegistrationNumber].LastName}";
-      Console.WriteLine($"\nRandom Number: {winningRegistrationNumber}");
+      
       WinningContestant = contestants[winningRegistrationNumber];
       return winner;
     }
