@@ -16,7 +16,7 @@ namespace Sweepstakes
     // Constructor
     public Sweepstakes(string name)
     {
-      this.name = name;
+      name = UserInterface.NameSweepstakes();
       contestants = new Dictionary<int, Contestant>();
       registrationNum = 0;
     }

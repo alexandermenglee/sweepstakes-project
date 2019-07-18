@@ -16,7 +16,7 @@ namespace Sweepstakes
     {
       sweepstakesQueue = new Queue<Sweepstakes>();
     }
-
+  
     // Member methods
    public void InsertSweepstakes(Sweepstakes sweepstakes)
     {

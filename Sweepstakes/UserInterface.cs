@@ -22,8 +22,7 @@ namespace Sweepstakes
       string firstName;
 
       Console.WriteLine("\nFirst Name: ");
-      firstName = Console.ReadLine();
-      firstName.ToLower().Trim();
+      firstName = Console.ReadLine().ToLower().Trim();
 
       return firstName;
     }
@@ -33,8 +32,7 @@ namespace Sweepstakes
       string lastName;
 
       Console.WriteLine("\nLast Name: ");
-      lastName = Console.ReadLine();
-      lastName.ToLower().Trim();
+      lastName = Console.ReadLine().ToLower().Trim();
 
       return lastName;
     }
@@ -44,16 +42,15 @@ namespace Sweepstakes
       string email;
 
       Console.WriteLine("Email: ");
-      email = Console.ReadLine();
-      email.ToLower().Trim();
+      email = Console.ReadLine().Trim();
 
-      if (!email.Contains("@") || !email.Contains("."))
+      if (email.Contains("@") && email.Contains("."))
       {
-        Console.WriteLine("\nPlease enter in a valid email address");
-        SetEmail();
+        return email;
       }
 
-      return email;
+      Console.WriteLine("\nPlease enter in a valid email address");
+      return SetEmail();
     }
 
     public static int SetRegistrationNumber()
@@ -78,6 +75,28 @@ namespace Sweepstakes
     public static void DisplayContestantInformation(Contestant contestant)
     {
       Console.WriteLine($"\nRegistration ID: {contestant.RegistrationNumber} Contestant Name: {contestant.FirstName} {contestant.LastName}");
+    }
+
+    public static string NameSweepstakes()
+    {
+      Console.WriteLine("\nName of sweepstakes: ");
+      return Console.ReadLine().Trim();
+    }
+
+    public static string ChooseListType()
+    {
+      string listType;
+
+      Console.WriteLine("\nWhat type of management system would you like to use? Enter in the corresponding number: \n1: Stack (LIFO - Last-in, First out) \n2: Queue (FIFO - First-in, First out)");
+      listType = Console.ReadLine().Trim();
+
+      if(listType == "1" || listType == "2")
+      {
+        return listType;
+      }
+
+      Console.WriteLine("Please enter in either 1 or 2");
+      return ChooseListType();
     }
   }
 }
