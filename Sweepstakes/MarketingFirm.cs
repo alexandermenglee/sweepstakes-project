@@ -12,18 +12,10 @@ namespace Sweepstakes
     public ISweepstakesManager managementSystem;
 
     // Constructor
-    public MarketingFirm()
+    public MarketingFirm(ISweepstakesManager managementSystem)
     {
-      managementSystem = DecideManagementSystem(UserInterface.ChooseListType());
+      this.managementSystem = managementSystem;
     }
 
-    public ISweepstakesManager DecideManagementSystem(string managementSystemChoice)
-    {
-      if (managementSystemChoice == "1")
-      {
-        return new SweepstakesStackManager();
-      }
-      else return new SweepstakesQueueManager();
-    }
   }
 }

@@ -83,20 +83,23 @@ namespace Sweepstakes
       return Console.ReadLine().Trim();
     }
 
-    public static string ChooseListType()
+    public static string ChooseManagementSystem()
     {
-      string listType;
+      string choice;
 
       Console.WriteLine("\nWhat type of management system would you like to use? Enter in the corresponding number: \n1: Stack (LIFO - Last-in, First out) \n2: Queue (FIFO - First-in, First out)");
-      listType = Console.ReadLine().Trim();
+      choice = Console.ReadLine().Trim();
 
-      if(listType == "1" || listType == "2")
+      if(choice == "1" || choice == "2")
       {
-        return listType;
+        return choice;
       }
 
       Console.WriteLine("Please enter in either 1 or 2");
-      return ChooseListType();
+      return ChooseManagementSystem();
     }
+
+   
+
   }
 }
