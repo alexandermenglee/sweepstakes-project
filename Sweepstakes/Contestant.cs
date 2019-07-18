@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-  public class Contestant
+  public class Contestant : IObserver
   {
     // Memeber variables
     private string firstName;
@@ -44,5 +44,19 @@ namespace Sweepstakes
       this.lastName = lastName;
       this.email = email;
     }
+
+    // Implementing IObserver
+     public void Update(Sweepstakes sweepstake)
+    {
+      if(registrationNumber == sweepstake.WinningContestant.RegistrationNumber)
+      {
+        Console.WriteLine($"{firstName} {lastName} you are the winner!");
+      }
+      else
+      {
+        Console.WriteLine($"{firstName} {lastName} you take the L!");
+      }
+    }
+
   }
 }

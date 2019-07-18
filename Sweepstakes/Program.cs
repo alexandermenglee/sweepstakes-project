@@ -15,6 +15,7 @@ namespace Sweepstakes
 
       choice = UserInterface.ChooseManagementSystem();
       container = SweepstakesManagerFactory.CreateManagementSystem(choice);
+
       MarketingFirm wicksMarketingFirm = new MarketingFirm(container);
     }
   }
